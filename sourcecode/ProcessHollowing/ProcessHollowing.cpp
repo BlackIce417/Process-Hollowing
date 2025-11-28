@@ -15,8 +15,8 @@ void CreateHollowedProcess(char* pDestCmdLine, char* pSourceFile)
 	
 	CreateProcessA
 	(
-		0,
-		pDestCmdLine,		
+		pDestCmdLine,
+		0,		
 		0, 
 		0, 
 		0, 
@@ -187,7 +187,7 @@ void CreateHollowedProcess(char* pDestCmdLine, char* pSourceFile)
 				PBASE_RELOCATION_ENTRY pBlocks = 
 					(PBASE_RELOCATION_ENTRY)&pBuffer[dwRelocAddr + dwOffset];
 
-				for (DWORD y = 0; y <  dwEntryCount; y++)
+				for (DWORD y = 0; y < dwEntryCount; y++)
 				{
 					dwOffset += sizeof(BASE_RELOCATION_ENTRY);
 
@@ -288,14 +288,16 @@ void CreateHollowedProcess(char* pDestCmdLine, char* pSourceFile)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	char* pPath = new char[MAX_PATH];
-	GetModuleFileNameA(0, pPath, MAX_PATH);
-	pPath[strrchr(pPath, '\\') - pPath + 1] = 0;
-	strcat(pPath, "helloworld.exe");
+	//char* pPath = new char[MAX_PATH];
+	//GetModuleFileNameA(0, pPath, MAX_PATH);
+	//pPath[strrchr(pPath, '\\') - pPath + 1] = 0;
+	//strcat(pPath, "helloworld.exe");
 	
+	char pPath[] = "G:\\GitHub\\Process-Hollowing\\sourcecode\\Debug\\HelloWorld.exe";
+	char target_path[] = "G:\\GitHub\\Process-Hollowing\\sourcecode\\Debug\\HelloWorld1.exe";
 	CreateHollowedProcess
 	(
-		"svchost", 
+		target_path,
 		pPath
 	);
 

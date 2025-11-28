@@ -1,0 +1,10 @@
+.vs/
+sourcecode/.vs/
+
+*.user
+*.suo
+*.VC.db
+*.VC.VC.opendb
+Debug/
+Release/
+x64/

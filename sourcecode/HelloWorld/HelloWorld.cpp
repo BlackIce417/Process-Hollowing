@@ -2,12 +2,11 @@
 //
 
 #include "stdafx.h"
-#include <windows.h>
 
 
-int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
+int main(int argc, char* argv[])
 {
-	MessageBoxA(0, "Hello World", "Hello World", 0);
+	MessageBoxA(0, "process hollowing", "process hollowing", 0);
 
 	return 0;
 }
